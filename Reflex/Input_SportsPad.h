@@ -12,42 +12,44 @@
   #define SCALING 4
 #endif
 
-//SMS pins - Port 1
-#define SMS1_TH 4
-#define SMS1_TR 13
-#define SMS1_TL 5
-#define SMS1_U  9
-#define SMS1_D  8
-#define SMS1_L  7
-#define SMS1_R  6
-
-/* port 2 not yet implemented
-  //SMS pins - Port 2
-  #define SMS2_TH 16
-  #define SMS2_TR 10
-  #define SMS2_TL 14
-  #define SMS2_U  20
-  #define SMS2_D  19
-  #define SMS2_L  18
-  #define SMS2_R  15
-*/
-DigitalPin<SMS1_U> sms1_U;
-DigitalPin<SMS1_D> sms1_D;
-DigitalPin<SMS1_L> sms1_L;
-DigitalPin<SMS1_R> sms1_R;
-DigitalPin<SMS1_TL> sms1_TL;
-DigitalPin<SMS1_TR> sms1_TR;
-DigitalPin<SMS1_TH> sms1_TH;
-
-/*
-  DigitalPin<SMS2_U> sms2_U;
-  DigitalPin<SMS2_D> sms2_D;
-  DigitalPin<SMS2_L> sms2_L;
-  DigitalPin<SMS2_R> sms2_R;
-  DigitalPin<SMS2_TL> sms2_TL;
-  DigitalPin<SMS2_TR> sms2_TR;
-  DigitalPin<SMS2_TH> sms2_TH;
-*/
+#ifndef ENABLE_REFLEX_SMS
+  //SMS pins - Port 1
+  #define SMS1_TH 4
+  #define SMS1_TR 13
+  #define SMS1_TL 5
+  #define SMS1_U  9
+  #define SMS1_D  8
+  #define SMS1_L  7
+  #define SMS1_R  6
+  
+  /* port 2 not yet implemented
+    //SMS pins - Port 2
+    #define SMS2_TH 16
+    #define SMS2_TR 10
+    #define SMS2_TL 14
+    #define SMS2_U  20
+    #define SMS2_D  19
+    #define SMS2_L  18
+    #define SMS2_R  15
+  */
+  DigitalPin<SMS1_U> sms1_U;
+  DigitalPin<SMS1_D> sms1_D;
+  DigitalPin<SMS1_L> sms1_L;
+  DigitalPin<SMS1_R> sms1_R;
+  DigitalPin<SMS1_TL> sms1_TL;
+  DigitalPin<SMS1_TR> sms1_TR;
+  DigitalPin<SMS1_TH> sms1_TH;
+  
+  /*
+    DigitalPin<SMS2_U> sms2_U;
+    DigitalPin<SMS2_D> sms2_D;
+    DigitalPin<SMS2_L> sms2_L;
+    DigitalPin<SMS2_R> sms2_R;
+    DigitalPin<SMS2_TL> sms2_TL;
+    DigitalPin<SMS2_TR> sms2_TR;
+    DigitalPin<SMS2_TH> sms2_TH;
+  */
+#endif
 
 struct SportsPadData {
   int8_t dx, dy;

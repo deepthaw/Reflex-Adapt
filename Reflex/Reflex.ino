@@ -60,6 +60,8 @@
 // Can be disabled if only using on MiSTer
 // #define ENABLE_PSX_GUNCON_MOUSE
 // #define ENABLE_PSX_JOGCON_MOUSE
+
+// different mouse input <Mouse.h> figure this out and merge with above
 // #define ENABLE_SMS_SPORTSPAD_MOUSE
 
 // Oled display can be used for detailed info
