@@ -31,7 +31,7 @@
 //#define ENABLE_REFLEX_GAMECUBE
 //#define ENABLE_REFLEX_WII
 //#define ENABLE_REFLEX_SMS
-#define ENABLE_REFLEX_SMS_SPORTSPAD // "sports" mode, controller mode works as a regular SMS pad
+//#define ENABLE_REFLEX_SMS_SPORTSPAD // "sports" mode, controller mode works as a regular SMS pad
 //#define ENABLE_REFLEX_JPC
 // Sega MegaDrive/Saturn config
 #define SATLIB_ENABLE_8BITDO_HOME_BTN // support for HOME button on 8bidto M30 2.4G.
@@ -60,7 +60,7 @@
 // Can be disabled if only using on MiSTer
 // #define ENABLE_PSX_GUNCON_MOUSE
 // #define ENABLE_PSX_JOGCON_MOUSE
-#define ENABLE_SMS_SPORTSPAD_MOUSE
+// #define ENABLE_SMS_SPORTSPAD_MOUSE
 
 // Oled display can be used for detailed info
 //#define ENABLE_PSX_GENERAL_OLED
@@ -283,8 +283,13 @@
 #endif
 #ifdef ENABLE_REFLEX_SMS_SPORTSPAD
       case REFLEX_SMS_SPORTSPAD:
-        display.setCol(6*6);
-        display.print(F("SMS SPORTS PAD"));
+        #ifdef ENABLE_SMS_SPORTSPAD_MOUSE
+          display.setCol(3*6);
+          display.print(F("SPORTS PAD MOUSE"));
+        #else
+          display.setCol(2*6);
+          display.print(F("SPORTS PAD JOYSTICK")); // not yet implemented
+        #endif
         break;
 #endif
 #ifdef ENABLE_REFLEX_JPC
